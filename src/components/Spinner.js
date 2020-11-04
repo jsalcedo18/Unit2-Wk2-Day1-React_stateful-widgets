@@ -1,27 +1,22 @@
 /*
 SPINNER Instructions
-
+ 
 Watch this short video:
 https://tk-assets.lambdaschool.com/38201164-4df9-4c89-923b-5325dc72124d_spinner.gif
 
-How many slices of state do you think are necessary to act as "sources of truth" for all
-the things that change in this widget? Give it some thought before continuing reading!
+💭
+state is ether true or false
+💭
 
-Our first impulse might be to say 2 different states:
-  - Whether the spinner is visible or not (perhaps this could be a boolean).
-  - Whether the text of the button reads "Show Spinner" or "Hide Spinner".
 
-But a single slice of state is all that's needed here: whether spinner is on or not.
-The text of the button can be derived from the value of that one slice of state.
-
-STEP 0:
+STEP 0: 🥇
   Start by studying the component below, and importing the state hook.
 
-STEP 1:
+STEP 1: 🥇
   Create a 'spinnerOn', 'setSpinnerOn' pair of variables using the state hook.
   The 'spinnerOn' slice should be initialized to true so the spinner is visible on page load.
 
-STEP 2:
+STEP 2: 🥇
   This is called a logical expression. If the expressions on both sides of the '&&' are truthy,
   the one on the right becomes the value of the whole line. If an expression on either side of the '&&'
   is falsy, the one on the left becomes the value of the whole line. It's a neat little trick to render
@@ -37,10 +32,11 @@ STEP 4:
   Do you remember the operator we use to do "not"?
 */
 
-import React from 'react'; /* STEP 0 */
+import React, { useState } from 'react'; /* STEP 0 */
 
 export default function Spinner() {
 /* STEP 1 */
+  const [spinnerOn, setSpinnerOn] = useState(true);
 
   const toggleSpinner = () => {
   /* STEP 4 */
@@ -50,7 +46,7 @@ export default function Spinner() {
     <div className='widget-spinner container'>
       <h2>Spinner</h2>
       {
-        true && <div id='spinner' className='spinner'>--+--</div> /* STEP 2 */
+        spinnerOn && <div id='spinner' className='spinner'>--+--</div> /* STEP 2 */
       }
       <button id='toggleSpinner' onClick={toggleSpinner}>
         Hide Spinner {/* STEP 3 */}
