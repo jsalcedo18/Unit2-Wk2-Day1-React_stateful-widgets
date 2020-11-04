@@ -24,10 +24,10 @@ STEP 2: 🥇
 
   Replace the hard-coded 'true' with the variable that keeps track of whether spinner is on or not.
 
-STEP 3:
+STEP 3: 🥇
   Use a ternary expression inside the text of the button, to render "Hide" or "Show" depending on the value of 'spinnerOn'.
 
-STEP 4:
+STEP 4: 🥇
   This click handler needs to toggle the spinner by setting "whether on" to be the opposite of what it currently is.
   Do you remember the operator we use to do "not"?
 */
@@ -40,6 +40,7 @@ export default function Spinner() {
 
   const toggleSpinner = () => {
   /* STEP 4 */
+   setSpinnerOn(!spinnerOn);
   };
 
   return (
@@ -49,7 +50,7 @@ export default function Spinner() {
         spinnerOn && <div id='spinner' className='spinner'>--+--</div> /* STEP 2 */
       }
       <button id='toggleSpinner' onClick={toggleSpinner}>
-        Hide Spinner {/* STEP 3 */}
+        {spinnerOn === true ? 'Hide Spinner' : 'Show Spinner'} {/* STEP 3 */}
       </button>
     </div>
   );
