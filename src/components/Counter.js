@@ -93,3 +93,50 @@ export default function Counter() {
 
 // But a single slice of state is all that's needed here: the count!
 // The other things can simply be _derived_ from the count itself.
+
+//------------------------------------------------------------------------------------------------------------
+/* How looks like without notes:
+
+import React, { useState } from 'react';
+
+export default function Counter() {
+
+  const [count, setCount] = useState(0);
+  
+  const increment = (event) => {
+    setCount(count + 1);
+  };
+  
+  const decrement = (event) => {
+    setCount(count - 1);
+  };
+
+  const reset = () => {
+    setCount(0);
+  };
+  
+  const style = {
+    fontSize: '1.5em',
+    marginBottom: '0.3em',
+    color: count%2 === 0 ? 'royalblue' : 'crimson'
+  };
+  
+      return (
+        <div className='widget-counter container'>
+          <h2>Counter</h2>
+
+          <div id='count' style={style}>
+            Number {count} is {count%2 === 0 ? 'Even' : 'Odd'}
+          </div>
+
+          <div>
+            <button id='increment' onClick={increment}>Increment</button> 
+            <button id='decrement' onClick={decrement}>Decrement</button>
+            <button id='resetCount' onClick={reset}>Reset</button>
+          </div>
+
+        </div>
+      );
+}
+
+*/
