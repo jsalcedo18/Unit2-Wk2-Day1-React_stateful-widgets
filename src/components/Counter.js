@@ -8,9 +8,9 @@ How many slices of state do you think are necessary to act as "sources of truth"
 the things that change in this widget? Give it some thought before continuing reading!
 
 💭
-Even Number = Blue (royalblue) & Odd is Red(crimson) (Toggle)
+Even Number = Blue (royalblue) & Odd is Red(crimson) (Toggle)... Didnt need to toggle
 -3 Buttons:
-Increment (+1), Decrement(-1), Reset(?)
+Increment (+1), Decrement(-1), Reset(?)...Already there
 "Number "
 "(#)" (One State)
 " is "
@@ -29,25 +29,26 @@ import React, { useState } from 'react';
 export default function Counter() {
   const [count, setCount] = useState(0);
   
-  // STEP 4:
+  // STEP 4: 🥇
   // This click handler needs to use 'setCount' to schedule the 'count' to become the current 'count' plus one.
   // These state changes are not synchronous: the updated count arrives on the next run of the Counter component.
   // Do NOT simply do count++. The plus plus is forbidden! We never mutate a slice of state in place. Even if you could
   // reassign a const, React would not be aware anything changed. Always use the state updater, passing in a new value.
-  const increment = () => {
-    /* STEP 4 */
+  //<button onClick={(event) => setWeapon("scissors")}>pick scissors</button>
+  const increment = (event) => {
+    setCount(count + 1);
   };
   
-  // STEP 5:
+  // STEP 5: 🥇
   // This click handler needs to use 'setCount' to set the 'count' to be the current 'count' minus one.
   // Do NOT do count--. That amounts to trying to mutate 'count' in place. This is the road to perdition.
-  const decrement = () => {
-    /* STEP 5 */
+  const decrement = (event) => {
+    setCount(count - 1);
   };
-  // STEP 6:
+  // STEP 6: 🥇
   // This click handler needs to use 'setCount' to set the 'count' to be zero again.
   const reset = () => {
-    /* STEP 6 */
+    setCount(0);
   };
   
   // STEP 2: 🥇
@@ -82,6 +83,7 @@ export default function Counter() {
     </div>
   );
 }
+
 //------------------------------------------------------------------------------------------------------------
 //Information from above that's not needed:
 // A naive developer might say 3 different slices:
